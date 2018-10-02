@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import fetch from "isomorphic-unfetch";
+import api from "../libs/api.js";
 
 // components
 import Page from "../components/Page";
 
 class PageTemp extends Component {
-  async getInitialProps(ctx) {
+  static async getInitialProps(ctx) {
     const { slug } = ctx.query;
     const page = await api.pages.getSingle(slug);
     return {
