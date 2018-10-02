@@ -27,11 +27,6 @@ app.prepare().then(() => {
     renderAndCache(req, res, "/page", queryParams);
   });
 
-  // Use the `renderAndCache` utility defined below to serve pages
-  server.get("/", (req, res) => {
-    renderAndCache(req, res, "/");
-  });
-
   server.get("*", (req, res) => {
     return handle(req, res);
   });

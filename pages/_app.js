@@ -2,10 +2,9 @@ import App, { Container } from "next/app";
 import React from "react";
 import withNProgress from "next-nprogress";
 import NProgressStyles from "next-nprogress/styles";
-import fetch from "isomorphic-unfetch";
 
 // components
-import Header from "../components/Header";
+import Header from "../components/global/Header";
 
 class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -14,7 +13,7 @@ class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx);
 
     return {
-      pageProps
+      pageProps,
     };
   }
 

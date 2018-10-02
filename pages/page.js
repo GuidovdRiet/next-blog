@@ -1,21 +1,22 @@
-import React, { Component } from "react";
-import api from "../libs/api.js";
+import React, { Component } from 'react';
+import api from '../libs/api.js';
 
 // components
-import Page from "../components/Page";
+import PageSelector from '../components/pages/PageSelector';
 
-class PageTemp extends Component {
+class Page extends Component {
   static async getInitialProps(ctx) {
     const { slug } = ctx.query;
     const page = await api.pages.getSingle(slug);
     return {
-      page
+      page,
     };
   }
+
   render() {
     const { page } = this.props;
-    return <Page {...page} />;
+    return <PageSelector {...page} />;
   }
 }
 
-export default PageTemp;
+export default Page;
